@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-serif-romantic {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Romantic Ambient Lights & Glassmorphism */
+.glass-panel {
+  background: rgba(35, 12, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 182, 193, 0.18);
+}
+
+.glass-panel-subtle {
+  background: rgba(26, 10, 30, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 150, 180, 0.12);
+}
+
+.glass-button {
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.85), rgba(217, 70, 239, 0.85));
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.45), 0 0 50px rgba(168, 85, 247, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 35px rgba(244, 63, 94, 0.65), 0 0 65px rgba(168, 85, 247, 0.35);
+}
+
+.glass-button:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* Candle flame animations */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px rgba(255, 190, 80, 0.9));
+  }
+  25% {
+    transform: scale(1.08, 0.96) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(255, 170, 50, 1));
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.88;
+    filter: drop-shadow(0 0 7px rgba(255, 190, 80, 0.85));
+  }
+  75% {
+    transform: scale(1.04, 0.98) rotate(1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 14px rgba(255, 200, 90, 0.95));
+  }
+}
+
+.flame-animated {
+  animation: flameFlicker 1.8s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+/* Floating animation */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+.animate-soft-float {
+  animation: softFloat 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}

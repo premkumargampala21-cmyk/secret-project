@@ -1,0 +1,15 @@
+services:
+  birthday-website:
+    build: .
+    container_name: birthday-website
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      SHARED_PASSWORD: ${SHARED_PASSWORD:-bangaram23}
+      SESSION_SECRET: ${SESSION_SECRET:-please-change-this-secret}
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+    restart: unless-stopped
