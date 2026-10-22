@@ -7,7 +7,9 @@ interface PhotoItem {
   url: string;
   caption: string;
   date?: string;
+  timestamp?: number;
   isCustom?: boolean;
+  public_id?: string;
 }
 
 interface MemoriesSectionProps {
