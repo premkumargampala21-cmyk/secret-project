@@ -9,6 +9,10 @@ services:
       PORT: 3000
       SHARED_PASSWORD: ${SHARED_PASSWORD:-bangaram23}
       SESSION_SECRET: ${SESSION_SECRET:-please-change-this-secret}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
+      DATABASE_URL: ${DATABASE_URL:-}
     volumes:
       - ./data:/app/data
       - ./uploads:/app/uploads
